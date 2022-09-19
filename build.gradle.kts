@@ -15,9 +15,9 @@ plugins {
 repositories {
   mavenCentral()
 }
+
 tasks.register("foo") {
   doLast {
     println(com.example.hello)
   }
 }
-projects

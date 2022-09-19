@@ -1,25 +1,13 @@
-import org.jetbrains.kotlin.com.intellij.util.lang.UrlClassLoader
-import org.jetbrains.kotlin.samWithReceiver.gradle.SamWithReceiverExtension
-import org.jetbrains.kotlin.samWithReceiver.gradle.SamWithReceiverGradleSubplugin
-
 plugins {
   `embedded-kotlin`
-  id("java-gradle-plugin")
 }
 
-plugins.apply(SamWithReceiverGradleSubplugin::class.java)
-extensions.configure(SamWithReceiverExtension::class.java) {
-  annotations(HasImplicitReceiver::class.qualifiedName!!)
-}
+
 
 group = "com.example"
 
 repositories {
   mavenCentral()
-}
-dependencies {
-  implementation(libs.gr8)
-  implementation(libs.okio)
 }
 
 tasks.named("compileKotlin").configure {
